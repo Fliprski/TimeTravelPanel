@@ -7,3 +7,11 @@ Time Travel Panel is a simple WPF Application created specifically for time and 
 ## Download
 
 Either clone the repository and build the app on your own or [Download The Newest Release](https://github.com/Fliprski/TimeTravelPanel/releases/tag/Stable).
+
+## Contributing
+
+Pull requests are welcome.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
