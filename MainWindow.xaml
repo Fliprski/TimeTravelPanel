@@ -1,0 +1,153 @@
+﻿<Window x:Class="TimeTravelPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeTravelPanel"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="Time Travel v1.3" Height="500" Width="800" Background="#ece9d8">
+    <!-- ResizeMode="CanMinimize" -->
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Image x:Key="George-W-Bush" x:Shared="False" Source="/George-W-Bush.jpg"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Image Source="/George-W-Bush.jpg" DockPanel.Dock="Top" Grid.Row="0"/>
+
+        <Border BorderBrush="LightGray" BorderThickness="1" Margin="10,2,10,7" Grid.Row="1">
+
+            <DockPanel Name="settingsPanel">
+                <Label FontWeight="Bold" Target="{Binding ElementName=settingsPanel}" DockPanel.Dock="Top">_Settings</Label>
+                <Grid DockPanel.Dock="Top" Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <DockPanel Grid.Column="0" Grid.Row="0">
+                        <TextBlock Name="date" Width="80" Height="30">Date</TextBlock>
+                        
+                        <TextBlock Name="day" Height="30" VerticalAlignment="Center">D</TextBlock>
+                        <ComboBox Name="dayPick" Width="45" Height="20">
+                            <ComboBoxItem>1</ComboBoxItem>
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                            <ComboBoxItem>4</ComboBoxItem>
+                            <ComboBoxItem>5</ComboBoxItem>
+                            <ComboBoxItem>6</ComboBoxItem>
+                            <ComboBoxItem>7</ComboBoxItem>
+                            <ComboBoxItem>8</ComboBoxItem>
+                            <ComboBoxItem>9</ComboBoxItem>
+                            <ComboBoxItem>10</ComboBoxItem>
+                            <ComboBoxItem>11</ComboBoxItem>
+                            <ComboBoxItem>12</ComboBoxItem>
+                            <ComboBoxItem>13</ComboBoxItem>
+                            <ComboBoxItem>14</ComboBoxItem>
+                            <ComboBoxItem>15</ComboBoxItem>
+                            <ComboBoxItem>16</ComboBoxItem>
+                            <ComboBoxItem>17</ComboBoxItem>
+                            <ComboBoxItem>18</ComboBoxItem>
+                            <ComboBoxItem>19</ComboBoxItem>
+                            <ComboBoxItem>20</ComboBoxItem>
+                            <ComboBoxItem>21</ComboBoxItem>
+                            <ComboBoxItem>22</ComboBoxItem>
+                            <ComboBoxItem>23</ComboBoxItem>
+                            <ComboBoxItem>24</ComboBoxItem>
+                            <ComboBoxItem>25</ComboBoxItem>
+                            <ComboBoxItem>26</ComboBoxItem>
+                            <ComboBoxItem>27</ComboBoxItem>
+                            <ComboBoxItem>28</ComboBoxItem>
+                            <ComboBoxItem>29</ComboBoxItem>
+                            <ComboBoxItem>30</ComboBoxItem>
+                            <ComboBoxItem>31</ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock Name="month" Height="30" Margin="5,0,0,0" VerticalAlignment="Center">M</TextBlock>
+                        <ComboBox Name="monthPick" Width="45" Height="20">
+                            <ComboBoxItem>1</ComboBoxItem>
+                            <ComboBoxItem>2</ComboBoxItem>
+                            <ComboBoxItem>3</ComboBoxItem>
+                            <ComboBoxItem>4</ComboBoxItem>
+                            <ComboBoxItem>5</ComboBoxItem>
+                            <ComboBoxItem>6</ComboBoxItem>
+                            <ComboBoxItem>7</ComboBoxItem>
+                            <ComboBoxItem>8</ComboBoxItem>
+                            <ComboBoxItem>9</ComboBoxItem>
+                            <ComboBoxItem>10</ComboBoxItem>
+                            <ComboBoxItem>11</ComboBoxItem>
+                            <ComboBoxItem>12</ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBlock Name="year" Height="30" Margin="5,0,0,0" VerticalAlignment="Center">Y</TextBlock>
+                        <TextBox Width="45" Height="20"/>
+
+                        <ComboBox Name="eraPick" Width="45" Height="20" DockPanel.Dock="Left" FontSize="10" SelectedIndex="0">
+                            <ComboBoxItem>CE</ComboBoxItem>
+                            <ComboBoxItem>BCE</ComboBoxItem>
+                        </ComboBox>
+                    </DockPanel>
+
+                    <DockPanel Grid.Column="1" Grid.Row="0" Margin="75, 0, 0, 0">
+                        <TextBlock Name="sqwimbl" Width="80" Height="30" VerticalAlignment="Top">Sqwimble</TextBlock>
+
+                        <Slider Width="200" Value="0" Minimum="-100" Maximum="100" SmallChange="1" LargeChange="10" TickPlacement="BottomRight" Ticks="-100, 0, 100"/>
+                    </DockPanel>
+
+                    <DockPanel Grid.Column="0" Grid.Row="1" Margin="0, 20, 0, 0">
+                        <TextBlock Name="location" Width="80" Height="30" VerticalAlignment="Top">Location</TextBlock>
+
+                        <StackPanel>
+                            <DockPanel>
+                                <TextBlock Name="lat" Width="80" Height="30" VerticalAlignment="Center">Lat.</TextBlock>
+                                <TextBox Width="180" Height="20"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <TextBlock Name="long" Width="80" Height="30" VerticalAlignment="Center">Long.</TextBlock>
+                                <TextBox Width="180" Height="20"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <DockPanel Grid.Column="1" Grid.Row="1" Margin="75, 20, 0, 0">
+                        <StackPanel>
+                            <DockPanel>
+                                <CheckBox VerticalAlignment="Center"/>
+                                <TextBlock Name="determ" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">Deterministic</TextBlock>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <CheckBox VerticalAlignment="Center"/>
+                                <TextBlock Name="assume" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">Assume Form</TextBlock>
+                            </DockPanel>
+                        </StackPanel>
+                    </DockPanel>
+                </Grid>
+                <Button
+                    FontSize="30"
+                    Padding="0"
+                    Content="Start"
+                    DockPanel.Dock="Bottom"
+                    Height="40" Width="100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                />
+            </DockPanel>
+        </Border>
+
+    </Grid>
+
+</Window>
